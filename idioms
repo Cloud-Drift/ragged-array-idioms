@@ -1,0 +1,2 @@
+`def trajplot(ds,bc)` : 
+  create a longitude-latitude plot of ragged array `ds` that is intelligent enough to interrupt a trajectory across the periodic zonal boundary condition `bc`.
