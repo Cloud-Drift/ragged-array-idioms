@@ -71,7 +71,7 @@ This currently does not work.
 
 We can also select by dimension name, as with regular DataArrays.
 The common dimensions of a typical oceanographic Lagrangian dataset are
-`trajectory` and `time`, so we can use these dimensions accordingly:
+`trajectory` and `obs` for observations, so we can use these dimensions accordingly:
 
 ```
 ds.lon.isel(trajectory=0) # equivalent to ds.lon[0]
@@ -86,10 +86,10 @@ be a meaningful "trajectory space" other than integer indexes.
 So, this syntax may simply be a redundant form of the positional dimension
 lookup syntax.
 
-However, for the time dimension, it would be quite useful. For example:
+However, for the observation dimension, it would be quite useful. For example:
 
 ```
-ds.lon.isel(time=0)
+ds.lon.isel(obs=0)
 ```
 
 would return the first element of the `lon` field for each trajectory.
