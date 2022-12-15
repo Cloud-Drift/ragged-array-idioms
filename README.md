@@ -8,7 +8,7 @@ The purpose of this repository is to document the typical use patterns
 for ragged array (i.e. Lagrangian) data in oceanography, as well as
 the desired [Xarray](https://xarray.dev) syntax.
 These idioms, together with those from other disciplines such as
-high-energy physics, genomis, and others, will allow the ragged array
+high-energy physics, genomics, and others, will allow the ragged array
 scientific community to evaluate the feasability of providing such
 syntax in Xarray.
 
