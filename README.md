@@ -109,9 +109,9 @@ This would return the variable as a DataArray for all trajectories on 00 UTC
 September 1, 2012.
 
 An outstanding question is whether the resultant DataArray contains only data
-from those trajectories that had a valid value at this time, or does is it
-filled with NaNs for trajectories that did not have a valid value at the
-requested time.
+from those trajectories that have valid values at selected time(s), or is it
+filled with NaNs for trajectories that do not have a valid value at the
+selected time(s).
 This exception does not occur with normal Xarray DataArrays because they are
 structured and multi-dimensional, i.e. the data is defined in other dimensions
 for all values of time that are in range.
