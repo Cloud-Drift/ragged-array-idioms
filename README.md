@@ -88,7 +88,7 @@ lookup syntax.
 
 However, for the observation dimension, it would be quite useful. For example:
 
-```
+```python
 ds.lon.isel(obs=0)
 ```
 
@@ -136,7 +136,6 @@ This currently does not work.
 This and examples below will be based on Philippe's EarthCube notebook snippets,
 except that here we want to write down the desired syntax that currently doesn't
 work, rather than the syntax with workarounds that works.
-
 
 TODO
 
