@@ -88,7 +88,7 @@ lookup syntax.
 
 However, for the observation dimension, it would be quite useful. For example:
 
-```
+```python
 ds.lon.isel(obs=0)
 ```
 
@@ -96,19 +96,46 @@ would return the first element of the `lon` field for each trajectory.
 
 This currently does not work.
 
+#### Selecting by dimension name and value
+
+Assuming that the `time` coordinate is defined as an array of `datetime`
+instances, we can select by time value, e.g.:
+
+```python
+ds.lon.sel(time=datetime(2012, 9, 1))
+```
+
+This would return the variable as a DataArray for all trajectories on 00 UTC
+September 1, 2012.
+
+An outstanding question is whether the resultant DataArray contains only data
+from those trajectories that have valid values at selected time(s), or is it
+filled with NaNs for trajectories that do not have a valid value at the
+selected time(s).
+This exception does not occur with normal Xarray DataArrays because they are
+structured and multi-dimensional, i.e. the data is defined in other dimensions
+for all values of time that are in range.
+
+This currently does not work.
+
 #### Selecting by label
 
-I'm not as familiar with selecting by label so need to do more studying before
-I propose the syntax here.
+If the `trajectory` coordinate is a labeled one (a set of strings instead of
+integers), then selecting by labels works as with usual DataArrays:
 
-TODO
+```python
+ds.lon.sel(trajectory='CARTHE123')
+```
+
+returns a DataArray of longitude for the `CARTHE123` trajectory.
+
+This currently does not work.
 
 ### Geographical binning of a variable
 
 This and examples below will be based on Philippe's EarthCube notebook snippets,
 except that here we want to write down the desired syntax that currently doesn't
 work, rather than the syntax with workarounds that works.
-
 
 TODO
 
